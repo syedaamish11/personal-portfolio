@@ -1,20 +1,40 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Syed Aamish | AI Student & Software Developer</title>
+  <meta name="description" content="Personal portfolio of Syed Aamish — AI Student, Python, C++, SQL, RAG systems, and algorithms developer.">
+  <meta name="keywords" content="Syed Aamish, AI Engineer, Python, C++, RAG, Machine Learning, Portfolio">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://syedaamish11.github.io/personal-portfolio/">
+  <meta property="og:title" content="Syed Aamish | AI Student & Software Developer">
+  <meta property="og:description" content="AI Student | Python | C++ | SQL | Building practical AI systems and scalable architectures.">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Syed Aamish | AI Student & Software Developer">
+  <meta name="twitter:description" content="AI Student | Python | C++ | SQL | Building practical AI systems and scalable architectures.">
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header / Navigation -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">&lt;Aamish /&gt;</a>
-      <nav class="nav-links">
+      <a href="#home" class="nav-logo">&lt;Aamish /&gt;</a>
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="nav-links" id="nav-menu">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -32,8 +52,8 @@
         <p class="hero-subtitle">
           AI Student | Python | C++ | SQL | Building AI Projects
         </p>
-        <p class="hero-bio">
-          Passionate about building practical AI systems, scalable backend architectures, and high-performance algorithms. Always learning, building, and sharing open-source work.
+        <p class="hero-bio" id="about">
+          Passionate about building practical AI systems, scalable backend architectures, and high-performance algorithms. Always learning, building, and sharing open-source work across RAG pipelines, data structures, and database automation.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -50,12 +70,12 @@
           <div class="skill-card">
             <div class="skill-icon">🐍</div>
             <h3>Python & AI</h3>
-            <p>RAG pipelines, vector embeddings, NLP processing, PyTorch fundamentals, data science libraries.</p>
+            <p>RAG pipelines, vector embeddings, NLP processing, PyTorch fundamentals, TF-IDF retrieval, and data processing.</p>
           </div>
           <div class="skill-card">
-            <div class="skill-icon">⚡</div>
+            <div class="skill-icon">⚙️</div>
             <h3>C++ & Systems</h3>
-            <p>Object-oriented programming, memory management, STL containers, Data Structures & Algorithms.</p>
+            <p>Modern C++ (C++17/20), object-oriented programming, memory management, STL containers, and Data Structures & Algorithms.</p>
           </div>
           <div class="skill-card">
             <div class="skill-icon">🗄️</div>
@@ -65,7 +85,7 @@
           <div class="skill-card">
             <div class="skill-icon">🌐</div>
             <h3>Web & Tools</h3>
-            <p>Semantic HTML5, modern CSS3 (Flexbox/Grid), JavaScript, Git, GitHub Desktop, Linux CLI.</p>
+            <p>Semantic HTML5, modern CSS3 (Flexbox/Grid), JavaScript, Git, GitHub Desktop, and Linux CLI workflows.</p>
           </div>
         </div>
       </div>
@@ -80,7 +100,7 @@
           <!-- Project 1 -->
           <article class="project-card">
             <div class="card-header">
-              <span class="card-icon">🧠</span>
+              <span class="card-icon">🤖</span>
               <a href="https://github.com/syedaamish11/ai-document-assistant" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
             </div>
             <h3 class="card-title">AI Document Assistant</h3>
@@ -98,7 +118,7 @@
           <!-- Project 2 -->
           <article class="project-card">
             <div class="card-header">
-              <span class="card-icon">🚗</span>
+              <span class="card-icon">🅿️</span>
               <a href="https://github.com/syedaamish11/smart-parking-system" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
             </div>
             <h3 class="card-title">Smart Parking System</h3>
@@ -116,7 +136,7 @@
           <!-- Project 3 -->
           <article class="project-card">
             <div class="card-header">
-              <span class="card-icon">&lt;/&gt;</span>
+              <span class="card-icon">💻</span>
               <a href="https://github.com/syedaamish11/dsa-practice" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
             </div>
             <h3 class="card-title">DSA Practice</h3>
@@ -160,11 +180,18 @@
         </p>
         <div class="contact-buttons">
           <a href="mailto:aamishahmed62@gmail.com" class="btn btn-primary">Send Email</a>
+          <button id="copy-email-btn" class="btn btn-outline" data-email="aamishahmed62@gmail.com">Copy Email</button>
           <a href="https://github.com/syedaamish11" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Follow on GitHub</a>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast" class="toast"></div>
 
   <footer class="footer">
     <div class="container">
